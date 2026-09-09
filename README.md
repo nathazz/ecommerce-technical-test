@@ -80,8 +80,19 @@ Backend:
 ```bash
 cp .env.example .env
 ```
-
-Ajuste o `.env` se necessário.
+env (example)
+```env (
+PORT=8080
+NODE_ENV=development
+FRONTEND_URL=http://localhost:5173
+COOKIE_SECRET=troque-este-valor-por-um-segredo-forte
+# PostgreSQL
+DB_HOST=localhost
+DB_PORT=5432
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
+DB_DATABASE=ecommerce_db
+```
 
 Com o Docker Compose padrão, a conexão com o banco pode ser:
 
@@ -127,6 +138,16 @@ No diretório `backend`:
 
 ```bash
 npm run seed
+```
+
+frontend:
+
+```bash
+cp .env.example .env
+```
+
+```env (example)
+VITE_API_URL=http://localhost:8080/api
 ```
 
 ### 5. Inicie a aplicação
